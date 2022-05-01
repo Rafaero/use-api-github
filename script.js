@@ -11,14 +11,19 @@ async function req() {
 
             .then(response => response.json())
             .then(response => data = response)
+            .catch(error => console.log(error))
 
         console.log(data)
+        
+        const { name, avatar_url, bio, message } = data
 
-        const { name, avatar_url, bio } = data
-
-        document.getElementById("avatar").setAttribute("src", avatar_url);
-        document.getElementById("name").innerText = name;
-        document.getElementById("bio").innerText = bio;
+        if(message == 'Not Found'){
+            alert("Usuario não encontrado")
+        }else{
+            document.getElementById("avatar").setAttribute("src", avatar_url);
+            document.getElementById("name").innerText = name;
+            document.getElementById("bio").innerText = bio;
+        }
     }
 
 }
