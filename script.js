@@ -3,16 +3,22 @@ async function req() {
     let data = [];
     let login = document.getElementById("login").value
 
-    await fetch(`https://api.github.com/users/${login}`)
+    if (login == "") {
+        alert("Preencha o campo")
+    } else {
 
-        .then(response => response.json())
-        .then(response => data = response) 
-        
+        await fetch(`https://api.github.com/users/${login}`)
+
+            .then(response => response.json())
+            .then(response => data = response)
+
         console.log(data)
 
-        const {name, avatar_url, bio} = data
-        
+        const { name, avatar_url, bio } = data
+
         document.getElementById("avatar").setAttribute("src", avatar_url);
         document.getElementById("name").innerText = name;
         document.getElementById("bio").innerText = bio;
     }
+
+}
