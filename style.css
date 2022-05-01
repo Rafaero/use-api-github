@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    margin-top: 10px;
 }
 
 body{
@@ -10,7 +11,7 @@ body{
 }
 
 div{
-    max-width: 350px;
+    max-width: 312px;
 }
 
 .button {
