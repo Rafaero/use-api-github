@@ -1,4 +1,4 @@
-function req() {
+Async function req() {
 
     let data = [];
     let login = document.getElementById("login").value
@@ -7,7 +7,7 @@ function req() {
         alert("Preencha o campo")
     } else {
 
-        fetch(`https://api.github.com/users/${login}`)
+       Await fetch(`https://api.github.com/users/${login}`)
 
             .then(response => response.json())
             .then(response => data = response)
